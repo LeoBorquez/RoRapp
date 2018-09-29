@@ -1181,7 +1181,7 @@
     );
 
     function createDate (y, m, d, h, M, s, ms) {
-        //can't just apply() to create a date:
+        //can't just apply() to new_products a date:
         //http://stackoverflow.com/questions/181348/instantiating-a-javascript-object-by-calling-prototype-constructor-apply
         var date = new Date(y, m, d, h, M, s, ms);
 
@@ -1421,9 +1421,9 @@
             doy = 4;
 
             // TODO: We need to take the current isoWeekYear, but that depends on
-            // how we interpret now (local, utc, fixed offset). So create
+            // how we interpret now (local, utc, fixed offset). So new_products
             // a now version of current config (take local/utc/offset flags, and
-            // create now).
+            // new_products now).
             weekYear = defaults(w.GG, config._a[YEAR], weekOfYear(local__createLocal(), 1, 4).year);
             week = defaults(w.W, 1);
             weekday = defaults(w.E, 1);

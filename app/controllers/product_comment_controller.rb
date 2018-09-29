@@ -1,0 +1,2 @@
+class ProductCommentController < ApplicationController
+end

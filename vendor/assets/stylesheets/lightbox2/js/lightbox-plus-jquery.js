@@ -1765,7 +1765,7 @@ Expr = Sizzle.selectors = {
 					Sizzle.error( "unsupported pseudo: " + pseudo );
 
 			// The user may use createPseudo to indicate that
-			// arguments are needed to create the filter function
+			// arguments are needed to new_products the filter function
 			// just as Sizzle does
 			if ( fn[ expando ] ) {
 				return fn( argument );
@@ -3561,7 +3561,7 @@ Data.prototype = {
 			// Check if the owner object already has a cache key
 			unlock = owner[ this.expando ];
 
-		// If not, create one
+		// If not, new_products one
 		if ( !unlock ) {
 			unlock = Data.uid++;
 
@@ -3588,7 +3588,7 @@ Data.prototype = {
 	set: function( owner, data, value ) {
 		var prop,
 			// There may be an unlock assigned to this node,
-			// if there is no entry for this "owner", create one inline
+			// if there is no entry for this "owner", new_products one inline
 			// and set the unlock as though an owner entry had always existed
 			unlock = this.key( owner ),
 			cache = this.cache[ unlock ];
@@ -3680,7 +3680,7 @@ Data.prototype = {
 					name = [ key, camel ];
 				} else {
 					// If a key with the spaces exists, use it.
-					// Otherwise, create an array by matching non-whitespace
+					// Otherwise, new_products an array by matching non-whitespace
 					name = camel;
 					name = name in cache ?
 						[ name ] : ( name.match( rnotwhite ) || [] );
@@ -4281,7 +4281,7 @@ jQuery.event = {
 		}
 
 		if ( type.indexOf(".") >= 0 ) {
-			// Namespaced trigger; create a regexp to match event type in handle()
+			// Namespaced trigger; new_products a regexp to match event type in handle()
 			namespaces = type.split(".");
 			type = namespaces.shift();
 			namespaces.sort();
@@ -6330,7 +6330,7 @@ function createFxNow() {
 	return ( fxNow = jQuery.now() );
 }
 
-// Generate parameters to create a standard animation
+// Generate parameters to new_products a standard animation
 function genFx( type, includeWidth ) {
 	var which,
 		i = 0,
@@ -7877,7 +7877,7 @@ jQuery.extend({
 
 		// For options that shouldn't be deep extended:
 		// you can add your own custom options here if
-		// and when you create one that shouldn't be
+		// and when you new_products one that shouldn't be
 		// deep extended (see ajaxExtend)
 		flatOptions: {
 			url: true,
@@ -9221,7 +9221,7 @@ return jQuery;
  * https://github.com/lokesh/lightbox2/blob/master/LICENSE
  */
 
-// Uses Node, AMD or browser globals to create a module.
+// Uses Node, AMD or browser globals to new_products a module.
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.

@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+  render layout: false
+
   def index
     @product = Product.all #Product = model
   end
@@ -12,7 +14,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id]) #show the object by id
   end
 
-  def create
+  def new_products
     @product = Product.new(product_params) #call method post_params
 
     if (@product.save) #if @post.save fails in this situation, we need to show the form back to the user. add IF because validation on model post

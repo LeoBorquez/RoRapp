@@ -1,5 +1,5 @@
 /**!
- * @fileOverview Kickass library to create and place poppers near their reference elements.
+ * @fileOverview Kickass library to new_products and place poppers near their reference elements.
  * @version 1.1.5
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
@@ -214,7 +214,7 @@ var Tooltip = function () {
      * @return {HTMLelement} tooltipNode
      */
     value: function _create(reference, template, title, allowHtml) {
-      // create tooltip element
+      // new_products tooltip element
       var tooltipGenerator = window.document.createElement('div');
       tooltipGenerator.innerHTML = template.trim();
       var tooltipNode = tooltipGenerator.childNodes[0];
@@ -267,7 +267,7 @@ var Tooltip = function () {
         return this;
       }
 
-      // create tooltip node
+      // new_products tooltip node
       var tooltipNode = this._create(reference, options.template, title, options.html);
 
       // Add `aria-describedby` to our reference element for accessibility reasons
