@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
 
-  render layout: false
+  layout false #don't use layout "application.html.erb"
 
   def index
     @product = Product.all #Product = model
+
   end
 
   def new
@@ -17,7 +18,7 @@ class ProductsController < ApplicationController
   def new_products
     @product = Product.new(product_params) #call method post_params
 
-    if (@product.save) #if @post.save fails in this situation, we need to show the form back to the user. add IF because validation on model post
+    if (@product.save) #if @post.save fails in this situation, we need to show the form back to the users. add IF because validation on model post
       redirect_to @product
     else
       render 'new' #same request as the form submission

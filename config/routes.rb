@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'products/new'
 
-  resource :products
-  resource :product_comment
 
+  resource :products
+  resource :products_comment
+  resource :categorys
+
+
+  #resource equal to model, is a rest resource
 end

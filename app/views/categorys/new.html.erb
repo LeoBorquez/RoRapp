@@ -1,0 +1,9 @@
+<h1>Add New Category</h1>
+
+<%= form_for :category, url: categorys_path do |f| %>
+  <p>
+    <%= f.label :name_category %>
+    <%= collection_select(:cat_id, 0, Category.all, :id, :name_category)  %>
+
+  </p>
+<% end %>

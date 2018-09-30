@@ -1,10 +1,30 @@
 <h1>New Product</h1>
 
-<%= form_for :product, url: products_path do |f| %>
+<%= form_for :product, url: products_path, local: true do |f| %>
 
   <p>
     <%= f.label :name %>
     <%= f.text_field(:name) %>
+  </p>
+
+  <p>
+    <%= f.label :price %>
+    <%= f.text_field(:price) %>
+  </p>
+
+  <p>
+    <%= f.label :stock %>
+    <%= f.text_field(:stock) %>
+  </p>
+
+  <p>
+    <%= f.label :category %>
+    <%= f.select :category, ['option'] %>
+  </p>
+
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area(:description) %>
   </p>
 
 <% end %>
