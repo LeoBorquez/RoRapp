@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'pages/index'
   get 'products/new'
+  get 'products/show'
 
 
   resource :products
