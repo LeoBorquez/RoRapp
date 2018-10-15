@@ -7,27 +7,32 @@ class ProductsController < ApplicationController
 
   end
 
+  def show
+    @product = Product.find (params[:id].inspect) #show the object by id
+  end
+
   def new
     @product = Product.new
   end
 
-  def show
-    @product = Product.find(params[:id]) #show the object by id
+  def edit
+    @product = Product.find(params[:id])
   end
 
   def create
     @product = Product.new(product_params) #call method post_params
 
+    @product.save
+    redirect_to products_url(@product)
+
+=begin
     if @product.save #if @post.save fails in this situation, we need to show the form back to the users. add IF because validation on model post
       redirect_to products_path(@product)
     else
       render 'new' #same request as the form submission
     end
+=end
 
-  end
-
-  def edit
-    @product = Product.find(params[:id])
   end
 
   def update
