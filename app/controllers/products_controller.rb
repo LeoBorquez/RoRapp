@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find (params[:id].inspect) #show the object by id
+    @product = Product.find(params[:id]) #show the object by id
   end
 
   def new
