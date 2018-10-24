@@ -22,17 +22,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params) #call method post_params
 
-    @product.save
-    redirect_to products_url(@product)
-
-=begin
-    if @product.save #if @post.save fails in this situation, we need to show the form back to the users. add IF because validation on model post
-      redirect_to products_path(@product)
+    if @product.save
+      redirect_to @product #if @post.save fails in this situation, we need to show the form back to the users. add IF because validation on model post
     else
       render 'new' #same request as the form submission
     end
-=end
-
   end
 
   def update
@@ -56,6 +50,11 @@ class ProductsController < ApplicationController
   private def product_params #validation parameters form
     params.require(:product).permit(:name, :price, :stock, :category, :description) #require a title & body in the new form
   end
+
+  def name_with_initial
+
+  end
+
 
 end
 

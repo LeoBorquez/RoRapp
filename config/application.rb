@@ -14,6 +14,7 @@ module ECommerce
     config.assets.enable = true
     config.assets.paths << Rails.root.join('vendor', 'assets', 'javascripts') #for use these folders
     config.assets.paths << Rails.root.join('vendor', 'assets', 'stylesheets')
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'images')
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
