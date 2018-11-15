@@ -1,4 +1,15 @@
+<% provide(:title, "Products Index") %>
+
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+</head>
+
+<body>
+
+
 <h1>Listing articles</h1>
+
 
 <table>
 
@@ -11,14 +22,14 @@
   </tr>
 
   <% @product.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.price %></td>
-    <td><%= product.stock %></td>
-    <td><%= product.category %></td>
-    <td><%= product.description %></td>
-    <td><%= link_to 'Show', product_path(product) %></td>
-  </tr>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <td><%= product.stock %></td>
+      <!--<td><%#= product.category %></td>-->
+      <td><%= product.description %></td>
+      <td><%= link_to 'Show', product_path(product) %></td>
+    </tr>
   <% end %>
 
 </table>
@@ -27,5 +38,13 @@
   <%= link_to 'New product', new_product_path %>
   <%= link_to 'Home', root_path %>
 </div>
+
+<%= yield %>
+
+</body>
+
+</html>
+
+
 
 
