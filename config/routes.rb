@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :products
   resources :categorys
-
+  resources :users
 
   root 'pages#index'
 

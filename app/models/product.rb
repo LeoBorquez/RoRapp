@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
 
+
   has_one :category
+  has_many :product_comments
 
   validates :name, presence: true,
             length: { maximum: 50}
