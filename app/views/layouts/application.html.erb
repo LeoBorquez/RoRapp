@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ECommerce</title>
+  <title><%= full_title(yield(:title)) %></title>
 
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -1541,7 +1541,9 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <%= yield %>
+</div>
 
-<%= yield %>
 </body>
 </html>

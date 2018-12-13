@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   #
   get 'pages/index'
   get 'products/index'  #GET because is a get request
+  get 'users/index'
 
   resources :products
   resources :categorys
