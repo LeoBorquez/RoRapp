@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'products/index'  #GET because is a get request
   get 'users/index'
+  get 'contact', to: 'pages#contact'
 
   resources :products
   resources :categorys
