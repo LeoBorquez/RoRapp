@@ -11,4 +11,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     #debugger to debug with the console
   end
+
+  def new
+    @user = User.new
+  end
+
 end
