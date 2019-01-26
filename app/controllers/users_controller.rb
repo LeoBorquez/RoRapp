@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  layout false
+  layout 'admin'
 
 
   def index
@@ -20,7 +20,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user
+      flash[:success] = "New admin created"
+      redirect_to @user #common convention, redirect to the newly created user's profile
     else
       render 'users/new'
     end

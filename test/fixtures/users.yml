@@ -2,10 +2,6 @@
 
 one:
   name: MyString
-  mail: MyString
+  email: MyString
   address: MyString
 
-two:
-  name: MyString
-  mail: MyString
-  address: MyString

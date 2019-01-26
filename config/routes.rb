@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'admin/contact', to: 'pages#contact' #admin layout, pages only for admin
   get 'admin/signup', to: 'users#new'
+  post 'admin/signup', to: 'users#create'
 
   resources :products
   resources :categorys
