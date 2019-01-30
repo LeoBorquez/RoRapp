@@ -70,3 +70,4 @@ gem 'jquery-rails', '4.3.3'
 gem 'bootstrap', '4.1.3'
 
 gem 'bcrypt', '3.1.12'
+gem 'rails-controller-testing', '1.0.4'
