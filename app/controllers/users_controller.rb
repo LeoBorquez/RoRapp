@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      log_in @user #log_in method is part of sessions_helper.rb
       flash[:success] = "New admin created"
       redirect_to @user #common convention, redirect to the newly created user's profile
     else
