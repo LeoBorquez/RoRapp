@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'products/index'  #GET because is a get request
   get 'users/index'
+
   get 'admin/contact', to: 'pages#contact' #admin layout, pages only for admin
   get 'admin/signup', to: 'users#new'
   post 'admin/signup', to: 'users#create'
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
