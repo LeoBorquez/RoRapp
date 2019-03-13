@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-
     user = User.find_by(email: params[:session][:email].downcase) #Get email user from database
     if user && user.authenticate(params[:session][:password]) #Get password from database
       log_in user #Method declared in sessions_helper.rb
@@ -20,7 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_url # Change to admin root
   end
 
