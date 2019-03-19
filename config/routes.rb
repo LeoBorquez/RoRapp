@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :products
   resources :categorys
   resources :users
+  resources :sessions
 
   root 'pages#index'
 
