@@ -10,13 +10,17 @@ Rails.application.routes.draw do
   get 'admin/signup', to: 'users#new'
   post 'admin/signup', to: 'users#create'
 
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  get '/logout', to: 'sessions#destroy'
+  get 'admin/login', to: 'sessions#new'
+  get 'admin/logout', to: 'sessions#destroy'
+  post 'admin/login', to: 'sessions#create'
+
+
+
 
   resources :products
   resources :categorys
   resources :users
+  resources :sessions
 
   root 'pages#index'
 
