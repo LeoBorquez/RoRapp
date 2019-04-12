@@ -1,8 +1,7 @@
 <%= stylesheet_link_tag "custom" %>
 
 <% provide(:title, "Sign up") %>
-
-
+<% provide(:button_text, 'Create my account') %>
 
 <h1>Sign up</h1>
 <p>This will be a signup for the news users admins</p>
@@ -11,25 +10,27 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 
-    <%= form_for(@user, url: admin_signup_path) do |f| %>
+    <%= render 'form' %>
 
-      <%= render 'shared/error_messages' %> <!-- partial view _error_messages -->
+    <%#= form_for(@user, url: admin_signup_path) do |f| %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+<!--      <%#= render 'shared/error_messages' %>  partial view _error_messages -->
 
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control' %>
+      <%#= f.label :name %>
+      <%#= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class:'form-control' %>
+      <%#= f.label :email %>
+      <%#= f.text_field :email, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%#= f.label :password %>
+      <%#= f.password_field :password, class:'form-control' %>
 
-      <%= f.submit "Create account" , class: "btn btn-primary" %>
+      <%#= f.label :password_confirmation, "Confirmation" %>
+      <%#= f.password_field :password_confirmation, class: 'form-control' %>
 
-    <% end %>
+      <%#= f.submit "Create account" , class: "btn btn-primary" %>
+
+    <%# end %>
 
   </div>
 </div>
