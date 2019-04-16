@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #debugger to debug with the console
+    # debugger to debug with the console
   end
 
   def new
@@ -21,9 +21,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      log_in @user #log_in method is part of sessions_helper.rb
+      log_in @user # log_in method is part of sessions_helper.rb
       flash[:success] = "New admin created"
-      redirect_to @user #common convention, redirect to the newly created user's profile
+      redirect_to @user # common convention, redirect to the newly created user's profile
     else
       render 'users/new'
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      #Handle a successful update.
+      # handle a successful update.
       flash[:success] = "Profile Updated"
       redirect_to @user
     else
@@ -44,9 +44,12 @@ class UsersController < ApplicationController
     end
   end
 
+  # Before filters
+
   # Confirms a logged in user
   def logged_in_user
     unless logged_in?
+      store_location # store the actual location of the user
       flash[:danger] = "Please log in."
       redirect_to admin_login_url
     end

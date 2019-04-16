@@ -1,6 +1,6 @@
 module SessionsHelper
 
-  # logs in the given user
+  # Logs in the given user
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -19,7 +19,7 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
 
-  # logs out the current user
+  # Logs out the current user
   def log_out
     #session.delete(:user_id)
     forget(current_user)
@@ -49,6 +49,17 @@ module SessionsHelper
   # Returns true if the user is logged in, false otherwise
   def logged_in?
     !current_user.nil? #if NOT(!)
+  end
+
+  # Redirects to stored location (or to the default)
+  def redirect_back_or(default)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  # Stores URL trying to be accessed
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get? # the URL expect a POST, UPDATE(patch), DELETE not a GET
   end
 
 end
