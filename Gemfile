@@ -71,3 +71,4 @@ gem 'bootstrap', '4.1.3'
 
 gem 'bcrypt', '3.1.12'
 gem 'rails-controller-testing', '1.0.4'
+gem 'minitest', '5.11.3'

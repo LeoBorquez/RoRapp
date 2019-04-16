@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   layout 'admin'
   before_action :logged_in_user, only: [:edit, :update] #restrict the filter to act only on :edit, :update
+  before_action :correct_user, only: [:edit, :update]
 
   def index
 
@@ -43,9 +44,18 @@ class UsersController < ApplicationController
     end
   end
 
-  unless logged_in?
-    flash[:danger] = "Please log in."
-    redirect_to login_url
+  # Confirms a logged in user
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to admin_login_url
+    end
+  end
+
+  # Confirms the correct user
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
   end
 
   private def user_params
