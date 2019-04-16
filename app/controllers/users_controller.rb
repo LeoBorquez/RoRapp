@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   layout 'admin'
-
+  before_action :logged_in_user, only: [:edit, :update] #restrict the filter to act only on :edit, :update
 
   def index
 
@@ -41,6 +41,11 @@ class UsersController < ApplicationController
     else
       render 'users/edit'
     end
+  end
+
+  unless logged_in?
+    flash[:danger] = "Please log in."
+    redirect_to login_url
   end
 
   private def user_params
