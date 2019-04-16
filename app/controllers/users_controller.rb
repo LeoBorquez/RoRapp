@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     unless logged_in?
       store_location # store the actual location of the user
       flash[:danger] = "Please log in."
-      redirect_to admin_login_url
+      redirect_to login_url
     end
   end
 

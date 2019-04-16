@@ -10,6 +10,11 @@ class UserControllerTest < ActionDispatch::IntegrationTest
     @another_user = users(:one)
   end
 
+  test "should redirect index when not logged in" do
+    get user_path
+    assert_redirected_to admin_login_url
+  end
+
   test "redirect edit when user isn't logged in" do
     log_in_as(@another_user)
     get edit_user_path(@user)

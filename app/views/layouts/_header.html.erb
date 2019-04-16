@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "E-Commerce", root_path, id: "logo" %>
+    <%= link_to "RoRapp", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
@@ -18,12 +18,12 @@
 
               <li class="divider"></li>
               <li>
-                <%= link_to "Log out", admin_logout_path, method: "delete" %>
+                <%= link_to "Log out", logout_path, method: "delete" %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "Log in", admin_login_path %> </li>
+          <li><%= link_to "Log in", login_path %> </li>
         <% end %>
       </ul>
     </nav>
