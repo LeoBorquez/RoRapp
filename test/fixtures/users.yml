@@ -5,3 +5,8 @@ one:
   email: leo@mail.com
   password_digest: <%= User.digest('password') %> #Called from user.rb
 
+two:
+  name: obesidad
+  email: obesidad@love.com
+  password_digest: <%= User.digest('vale123') %>
+
