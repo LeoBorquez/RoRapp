@@ -25,8 +25,8 @@
 //= require countdowntime/countdowntime
 //= require daterangepicker/daterangepicker
 //= require daterangepicker/moment
-//= require lightbox2/lightbox
-//= require lightbox2/lightbox-plus-jquery
+// require lightbox2/lightbox
+// require lightbox2/lightbox-plus-jquery
 //= require MagnificPopup/jquery.magnific-popup
 //= require main
 //= require map-custom

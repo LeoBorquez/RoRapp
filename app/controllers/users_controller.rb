@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
-  layout 'admin'
+  #layout 'admin'
   before_action :logged_in_user, only: [:index ,:edit, :update] #restrict the filter to act only on :edit, :update
   before_action :correct_user, only: [:edit, :update]
 
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def show

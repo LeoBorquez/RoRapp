@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'users/index'
 
   get 'contact', to: 'pages#contact' #admin layout, pages only for admin
+  get 'help', to: 'pages#help'
+
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
 
@@ -24,5 +26,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
 
+
   #resource equal to model, is a rest resource is ALWAYS in PLURAL (resources)
 end
+
