@@ -13,12 +13,16 @@
     <%= will_paginate %> <!-- Users pagination -->
 
     <ul class="users">
-      <% @users.each do |user| %>
-        <li>
-          <%= gravatar_for user, size: 50 %>
-          <%= link_to user.name, user %>
-        </li>
-      <% end %>
+
+      <%= render @users %> <!-- Rails infers that @users is a list of User objects -->
+    <!--  <%#= @users.each do |user| %> -->
+        <!--<li>
+          <%#= gravatar_for user, size: 50 %>
+          <%#= link_to user.name, user %>
+        </li>-->
+
+      <!-- <%#= render user %> Calling render user, Rails automatically looks for a partial _user.html.erb -->
+    <!--  <#% end %> -->
     </ul>
 
     <%= will_paginate %>
