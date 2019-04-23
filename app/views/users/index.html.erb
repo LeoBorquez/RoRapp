@@ -9,6 +9,9 @@
 
 
     <h1>All users</h1>
+
+    <%= will_paginate %> <!-- Users pagination -->
+
     <ul class="users">
       <% @users.each do |user| %>
         <li>
@@ -17,6 +20,8 @@
         </li>
       <% end %>
     </ul>
+
+    <%= will_paginate %>
 
     <%= yield %>
 

@@ -10,3 +10,14 @@ two:
   email: obesidad@love.com
   password_digest: <%= User.digest('vale123') %>
 
+three:
+  name: ironman
+  email: ironman@avengers.com
+  password_digest: <%= User.digest('tonystark') %>
+
+<% 30.times do |n| %>
+   user_<%= n %>:
+     name: <%= "User #{ n }" %>
+     email: <%= "user-#{ n }@email.com" %>
+     password_digest: <%= User.digest('password') %>
+  <% end %>
