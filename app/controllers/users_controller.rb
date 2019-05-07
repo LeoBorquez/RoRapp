@@ -44,6 +44,7 @@ class UsersController < ApplicationController
     end
   end
 
+
   # Before filters
 
   # Confirms a logged in user
