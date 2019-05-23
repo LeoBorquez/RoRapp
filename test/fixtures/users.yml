@@ -2,7 +2,7 @@
 
 one:
   name: Example user
-  email: example@rails.com
+  email: example@email.com
   password_digest: <%= User.digest('password') %> #Called from user.rb
   admin: true
 
