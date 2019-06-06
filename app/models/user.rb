@@ -51,7 +51,7 @@ class User < ApplicationRecord
     self.email = email.downcase
   end
 
-  #Creates and assigns the activation token and digest
+  #Creates and assigns the activation token and digest - is a URL-safe base64
   def create_activation_digest
     self.activation_token = User.new_token
     self.activation_digest = User.digest(activation_token)
