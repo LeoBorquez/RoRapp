@@ -29,11 +29,3 @@ three:
 #    password_digest: <%#= User.digest('password') %>
 #  <%# end %>
 
-<% 30.time do |n| %>
-  user_≤%= n %>:
-    name: <%= "User #{n}" %>
-    email: <%= "user-#{n}@example.com" %>
-    password_digest: <%= User.digest('password') %>
-    activated: true
-    activated_at: <%= Time.zone.now %>
-  <% end %>
