@@ -11,7 +11,7 @@ class UserControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should redirect index when not logged in" do
-    get user_path
+    get users_path
     assert_redirected_to login_url
   end
 
