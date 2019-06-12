@@ -48,6 +48,14 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  # Activates new account
+  def activate
+    #update_attribute(:activated, true)
+    #update_attribute(:activated_at, Time.zone.now)
+    # It's the same but update_columns go directly to the database
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
   # Converts email to all lower-case
   def downcase_email
     self.email = email.downcase
@@ -59,12 +67,7 @@ class User < ApplicationRecord
     self.activation_digest = User.digest(activation_token)
   end
 
-  # Activates new account
-  def activate
-    update_attribute(:activated, true)
-    update_attribute(:activated_at, Time.zone.now)
-  end
-
+  # Sends activation email
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end
