@@ -53,17 +53,21 @@ class User < ApplicationRecord
     self.email = email.downcase
   end
 
-  #Creates and assigns the activation token and digest - is a URL-safe base64
+  # Creates and assigns the activation token and digest - is a URL-safe base64
   def create_activation_digest
     self.activation_token = User.new_token
     self.activation_digest = User.digest(activation_token)
   end
 
+  # Activates new account
   def activate
     update_attribute(:activated, true)
     update_attribute(:activated_at, Time.zone.now)
   end
 
-  
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
 
 end

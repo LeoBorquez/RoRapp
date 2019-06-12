@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      UserMailer.account_activation(@user).deliver_now
+      @user.send_activation_email #UserMailer.account_activation(@user).deliver_now
       #log_in @user # log_in method is part of sessions_helper.rb
       flash[:info] = "Please check your email to activate your account"
       redirect_to root_url # common convention, redirect to the newly created user's profile
