@@ -59,4 +59,11 @@ class User < ApplicationRecord
     self.activation_digest = User.digest(activation_token)
   end
 
+  def activate
+    update_attribute(:activated, true)
+    update_attribute(:activated_at, Time.zone.now)
+  end
+
+  
+
 end
