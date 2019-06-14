@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  root 'pages#index'
 
   get 'contact', to: 'pages#contact' #admin layout, pages only for admin
   get 'help', to: 'pages#help' #GET because is a get request
@@ -14,10 +14,9 @@ Rails.application.routes.draw do
 
 
   resources :users
-  resources :sessions
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
-  root 'pages#index'
 
 
   #resource equal to model, is a rest resource is ALWAYS in PLURAL (resources)
