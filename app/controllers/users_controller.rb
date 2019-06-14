@@ -6,12 +6,14 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy #only admin can delete (method admin_user)
 
   def index
-    @users = User.paginate(page: params[:page]) #will_paginate method
+    #@users = User.paginate(page: params[:page]) #will_paginate method
+    @users = User.where(activated: true).paginate(page: params[:page])
   end
 
   def show
     @user = User.find(params[:id])
     # debugger to debug with the console
+    redirect_to root_url and return unless true
   end
 
   def new
