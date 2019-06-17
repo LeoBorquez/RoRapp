@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  has_many :microposts
+  has_many :microposts, dependent: :destroy # The post are destroy with the user
 
   attr_accessor :remember_token, :activation_token, :reset_token # remember method
 
