@@ -3,15 +3,26 @@
 fruit:
   content: "I just a simple fruit"
   created_at: <%= 10.minutes.ago %>
+  user: one
 
 leo_media:
   content: "Check out my twitter"
   created_at: <%= 3.years.ago %>
+  user: one
 
 random_video:
   content: "A random video from youtube"
   created_at: <%= 2.hours.ago %>
+  user: one
 
 most_recent:
   content: "Unit test"
   created_at: <%= Time.zone.now %>
+  user: one
+
+ <% 30.times do |n| %>
+  micropost_<%= n %>:
+   content: <%= Faker::Lorem.sentence(5) %>
+   created_at: <% 42.days.ago %>
+   user: one
+ <% end %>
