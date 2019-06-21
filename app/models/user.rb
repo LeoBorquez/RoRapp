@@ -91,7 +91,10 @@ class User < ApplicationRecord
     self.activation_digest = User.digest(activation_token)
   end
 
-
+  # Feed prototype
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
 
 
 end
