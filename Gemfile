@@ -67,11 +67,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'font-awesome-rails', '4.7.0.4'
 gem 'jquery-rails', '4.3.3'
-gem 'bootstrap', '4.1.3'
+gem 'bootstrap', '4.3.1'
 
 gem 'bcrypt', '3.1.12'
 gem 'rails-controller-testing', '1.0.4'
 gem 'minitest', '5.11.3'
 gem 'faker', '1.9.3'
 gem 'will_paginate', '3.1.7'
-gem 'bootstrap-will_paginate', '1.0.0'
+gem 'bootstrap', '4.3.1'
+gem 'boostrap-sass', '0.0.2'

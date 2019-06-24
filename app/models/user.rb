@@ -93,7 +93,7 @@ class User < ApplicationRecord
 
   # Feed prototype
   def feed
-    Micropost.where("user_id = ?", id)
+    Micropost.where("user_id = ?", id) # ? the id is properly escaped
   end
 
 
