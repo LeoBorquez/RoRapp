@@ -1,36 +1,34 @@
-
-
 <html>
 <head>
   <% provide(:title, "All users") %>
 </head>
-  <body>
-  <div class="container">
+<body>
+<div class="container">
 
 
-    <h1>All users</h1>
+  <h1>All users</h1>
 
-    <%= will_paginate %> <!-- Users pagination -->
+  <%= will_paginate %> <!-- Users pagination -->
 
-    <ul class="users">
+  <ul class="users">
 
-      <%= render @users %> <!-- Rails infers that @users is a list of User objects -->
+    <%= render @users %> <!-- Rails infers that @users is a list of User objects -->
     <!--  <%#= @users.each do |user| %> -->
-        <!--<li>
+    <!--<li>
           <%#= gravatar_for user, size: 50 %>
           <%#= link_to user.name, user %>
         </li>-->
 
-      <!-- <%#= render user %> Calling render user, Rails automatically looks for a partial _user.html.erb -->
+    <!-- <%#= render user %> Calling render user, Rails automatically looks for a partial _user.html.erb -->
     <!--  <#% end %> -->
-    </ul>
+  </ul>
 
-    <%= will_paginate %>
+  <%= will_paginate %>
 
-    <%= yield %>
+  <%= yield %>
 
-  </div>
-  </body>
+</div>
+</body>
 
 
 </html>
