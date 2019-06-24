@@ -1,2 +1,0 @@
-class ProductsCommentController < ApplicationController
-end

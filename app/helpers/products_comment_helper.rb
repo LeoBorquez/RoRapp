@@ -1,2 +1,0 @@
-module ProductsCommentHelper
-end
