@@ -26,3 +26,23 @@ most_recent:
 #   created_at: <%# 42.days.ago %>
 #   user: one
 # <%# end %>
+
+test1:
+  content: "Oh, this is the test number 1"
+  created_at: <%= 2.years.ago %>
+  user: gunner
+
+test2:
+  content: "live your  life"
+  created_at: <%= 3.days.ago %>
+  user: gunner
+
+test3:
+  content: "again another boring test"
+  created_at: <% 10.minutes.ago %>
+  user: obesidad
+
+test4:
+  content: "sup vro"
+  created_at: <%= 4.hours.ago %>
+  user: obesidad
