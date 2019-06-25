@@ -3,6 +3,8 @@ class Micropost < ApplicationRecord
 
   default_scope -> { order(created_at: :desc) } # Show the recent post first
 
+  mount_uploader :picture, PictureUploader # mount_uploader method, takes as arguments a symbol representing the attribute and the class name of the generated uploader
+
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
 end
