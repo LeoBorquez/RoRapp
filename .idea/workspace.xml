@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9299ae3a-fb1e-4602-82c3-44cac54ce784" name="Default Changelist" comment="Create model user, product_comment&#10;Modify model product">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/microposts_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/microposts_controller_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/microposts.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/microposts.yml" afterDir="false" />
-    </list>
+    <list default="true" id="9299ae3a-fb1e-4602-82c3-44cac54ce784" name="Default Changelist" comment="Create model user, product_comment&#10;Modify model product" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -775,7 +771,7 @@
       <workItem from="1561153800640" duration="2146000" />
       <workItem from="1561258073050" duration="269000" />
       <workItem from="1561395667193" duration="9949000" />
-      <workItem from="1561498515728" duration="1154000" />
+      <workItem from="1561498515728" duration="1678000" />
     </task>
     <task id="LOCAL-00001" summary="Create model user, product_comment&#10;Modify model product">
       <created>1538108659218</created>
@@ -796,7 +792,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278739000" />
+    <option name="totallyTimeSpent" value="279263000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -809,7 +805,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1135" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.489011" visible="true" weight="0.21033014" />
       <window_info id="Structure" order="1" sideWeight="0.5071908" side_tool="true" weight="0.19382322" />
