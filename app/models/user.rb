@@ -1,9 +1,12 @@
 class User < ApplicationRecord
 
   has_many :microposts, dependent: :destroy # The post are destroy with the user
-  has_many :active_relationships, class_name: "Relationship",
+
+  has_many :active_relationships, class_name: "Relationship", # relationship.rb
            foreign_key: "follower_id",
            dependent: :destroy # Destroy user destroy relationship
+  # :following is a custom key to represent followed
+  has_many :following, through: :active_relationships, source: :followed
 
   attr_accessor :remember_token, :activation_token, :reset_token # remember method
 
@@ -99,5 +102,19 @@ class User < ApplicationRecord
     Micropost.where("user_id = ?", id) # ? the id is properly escaped
   end
 
+  # Follows user
+  def follow(other_user)
+    active_relationships.create(followed_id: other_user.id)
+  end
+
+  # Unfollows a user
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  # Return true if current user follow the other user
+  def following?(other_user)
+    following.include?(other_user)
+  end
 
 end
