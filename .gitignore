@@ -31,3 +31,6 @@
 
 .env
 .idea/workspace.xml
+
+# Ignore uploaded test images
+/public/uploads
