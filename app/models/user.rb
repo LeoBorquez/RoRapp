@@ -1,6 +1,9 @@
 class User < ApplicationRecord
 
   has_many :microposts, dependent: :destroy # The post are destroy with the user
+  has_many :active_relationships, class_name: "Relationship",
+           foreign_key: "follower_id",
+           dependent: :destroy
 
   attr_accessor :remember_token, :activation_token, :reset_token # remember method
 
@@ -22,7 +25,7 @@ class User < ApplicationRecord
   # Returns the hash digest of the given string
   def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
+               BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
 
