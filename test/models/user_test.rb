@@ -29,6 +29,7 @@ class UserTest < ActiveSupport::TestCase
     one.follow(gunner)
 
     assert one.following?(gunner)
+    assert gunner.followers.include?(one)
     one.unfollow(gunner)
     assert_not one.following?(gunner)
 
