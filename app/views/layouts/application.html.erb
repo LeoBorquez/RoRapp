@@ -3,6 +3,7 @@
 <html>
 <head>
 
+  <title><%= full_title(yield(:title)) %></title>
 
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -10,13 +11,17 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'true' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'true' %>
 
-  <%= render 'layouts/header' %>
+<%= render 'layouts/shim' %>
+
+</head>
 
 <body>
 
+<%= render 'layouts/header' %>
 
 <div class="container">
   <% flash.each do |message_type, message| %>
+
     <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
   <% end %>
   <%= yield %>
@@ -28,5 +33,5 @@
 </div>
 
 </body>
-</head>
+
 </html>
