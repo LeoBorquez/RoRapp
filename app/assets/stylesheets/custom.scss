@@ -3,7 +3,18 @@
 $gray-medium-light: #eaeaea;
 $gray-light: #e0e0e0;
 
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 /* Universal */
+
+html {
+  overflow-y: scroll;
+}
+
 body {
   padding-top: 60px;
 }
@@ -18,10 +29,9 @@ textarea {
 
 .center {
   text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
+  h1 {
+    margin-bottom: 60px;
+  }
 }
 
 /* Typography */
@@ -43,7 +53,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: $gray-light;
 }
 
 p {
@@ -57,7 +67,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -74,11 +84,35 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
-
+  color: $gray-light;
+  a {
+    color: grey;
+    &:hover {
+      color: darkgray;
+    }
+  }
   small {
     float: left;
   }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
 
+}
+
+/* Misc */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing
 }
 
 /* sidebar */
@@ -162,6 +196,7 @@ input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
+  @include box_sizing
 }
 
 input {
@@ -175,6 +210,13 @@ input {
     margin: 0 0 30px 0;
   }
 }
+
+/*.field_with_errors {
+  @extend .hash-error;
+  .form-control {
+    color: darkred;
+  }
+}*/
 
 .checkbox {
   margin-top: -10px;
@@ -197,8 +239,8 @@ input {
   margin: 0;
   li {
     overflow: auto;
-    padding: 10px;
-    border-bottom: 1px solid lightgray;
+    padding: 10px 0;
+    border-bottom: 1px solid lightslategrey;
   }
 }
 
@@ -224,7 +266,7 @@ input {
     }
   }
   .timestamp {
-    color: #3F3F3F;
+    color: lightgray;
     display: block;
     margin-left: 60px;
   }

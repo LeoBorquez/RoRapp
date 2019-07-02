@@ -103,7 +103,17 @@ class User < ApplicationRecord
 
   # Feed prototype
   def feed
-    Micropost.where("user_id = ?", id) # ? the id is properly escaped
+    # First noob way
+    # Micropost.where("user_id = ?", id) # ? the id is properly escaped
+
+    # Second decent way
+    # following_ids method is synthesized by Active Record based on the has_many :following association
+    # Micropost.where("user_id IN (:following_ids) OR user_id = :user_id", following_ids: following_ids, user_id: id)
+
+    # Master way
+    following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
+    Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
+
   end
 
   # Follows user
