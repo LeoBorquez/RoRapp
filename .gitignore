@@ -34,3 +34,4 @@
 
 # Ignore uploaded test images
 /public/uploads
+.idea/workspace.xml
