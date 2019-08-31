@@ -1,7 +1,4 @@
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 $gray-medium-light: #eaeaea;
 $gray-light: #e0e0e0;
 
@@ -292,3 +289,7 @@ span.picture {
     border: 0;
   }
 }
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
