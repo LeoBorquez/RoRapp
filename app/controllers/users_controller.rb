@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy #only admin can delete (method admin_user)
 
-  def index
+  def ind
     @users = User.where(activated: true).paginate(page: params[:page])
   end
 
